@@ -148,13 +148,13 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 */
 .header {
-  align-items: center;
   background: #fff;
+  border-radius: 8px;
   display: flex;
   height: var(--header-height);
-  padding: 0 1rem;
-  position: sticky;
-  top: 0;
+  justify-content: space-between;
+  margin: 20px 40px;
+  padding: 20px 24px;
   z-index: 1;
 }
 
@@ -165,7 +165,12 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .header-menu-mobile {
-  display: flex;
+  @media (min-width: 0px) and (max-width: 450px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   flex-direction: column;
   grid-gap: 1rem;
 }
@@ -173,10 +178,9 @@ button.reset:hover:not(:has(> *)) {
 .header-menu-desktop {
   display: none;
   grid-gap: 1rem;
-  @media (min-width: 45em) {
+  @media (min-width: 48em) {
     display: flex;
-    grid-gap: 1rem;
-    margin-left: 3rem;
+    grid-gap: 32px;
   }
 }
 
@@ -188,7 +192,6 @@ button.reset:hover:not(:has(> *)) {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  margin-left: auto;
 }
 
 /*
@@ -199,6 +202,10 @@ button.reset:hover:not(:has(> *)) {
 .footer {
   background: var(--color-dark);
   margin-top: auto;
+  /* height: 48px;
+  position: fixed;
+  margin-top: calc(100vh - 48px);
+  width: 100%; */
 }
 
 .footer-menu {
@@ -321,9 +328,10 @@ button.reset:hover:not(:has(> *)) {
 
 /*
 * --------------------------------------------------
-* routes/__index
+* routes/__index home entry point
 * --------------------------------------------------
 */
+
 .featured-collection {
   display: block;
   margin-bottom: 2rem;
