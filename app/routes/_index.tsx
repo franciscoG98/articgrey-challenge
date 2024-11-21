@@ -8,7 +8,7 @@ import type {
 } from 'storefrontapi.generated';
 
 export const meta: MetaFunction = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{title: 'UNCMFRT.COM | Home'}];
 };
 
 export async function loader(args: LoaderFunctionArgs) {
@@ -58,8 +58,29 @@ function loadDeferredData({context}: LoaderFunctionArgs) {
 export default function Homepage() {
   const data = useLoaderData<typeof loader>();
   return (
-    <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
+    <div>
+      <section className="h-screen">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover -z-1"
+        >
+          <source src="./articgrey_landing-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+          <img src="./articgrey_fallback.png" alt="articgrey fallback" />
+        </video>
+        <div className="relative z-1 text-white pt-96 max-w-xl">
+          <h2 className="font-bold text-5xl whitespace-normal text-left">
+            Great things never came from comfort zones.
+          </h2>
+          <button className="flex capitalize rounded-md px-8 py-3 font-semibold text-black bg-white mt-8">
+            Shop Now
+          </button>
+        </div>
+      </section>
+      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
