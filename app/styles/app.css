@@ -148,13 +148,15 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 */
 .header {
+  align-items: center;
   background: #fff;
   border-radius: 8px;
+  border: 1px solid red;
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
   margin: 20px 40px;
-  padding: 20px 24px;
+  /* padding: 20px 24px; */
   z-index: 1;
 }
 
